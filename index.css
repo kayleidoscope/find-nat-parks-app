@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+}
+
+
+.group {
+    display: flex;
+    flex-direction: row;
+}
+
+.item {
+    width: 50%;
+}
