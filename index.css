@@ -11,3 +11,7 @@
 .item {
     width: 50%;
 }
+
+li {
+    list-style: none;
+}
