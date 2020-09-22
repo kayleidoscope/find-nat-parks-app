@@ -1,3 +1,5 @@
+'use strict';
+
 //set apiKey to a variable
 const apiKey = "P4jSe07xT0iE5pVCbCnF5lfnvcLpQR48IcYYcHcn";
 //set needed url to a variable
@@ -8,7 +10,7 @@ function formatQueryParams(params) {
     console.log('formatQueryParams ran');
     //get query params ready to tack onto searchURL
     const queryItems = Object.keys(params)
-        .map(key => `${key}=${(params[key])}`)
+        .map(key => `${key}=${params[key]}`)
     return queryItems.join('&');
 }
 
@@ -40,7 +42,7 @@ function getParks(statesFormatted, maxResults) {
     const queryString = formatQueryParams(params);
     
     //create needed url by adding queryString onto the end of searchURL
-    const url = searchURL + '?' + queryString;
+    const url = encodeURI(searchURL + '?' + queryString);
 
     console.log(url);
 
